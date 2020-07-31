@@ -63,7 +63,7 @@ export default {
   components: { Slider, Button },
   data() {
     return {
-      selectedPr: {},
+      selectedPr: {}
     };
   },
   methods: {
@@ -71,13 +71,13 @@ export default {
       this.tgSelected();
       this.$router.push("donation");
     },
-    ...mapActions(["tgSelected"]),
+    ...mapActions(["tgSelected"])
   },
 
   computed: mapGetters(["isSelected"]),
   created() {
     this.selectedPr = this.$store.state.projects.isProject;
-  },
+  }
 };
 </script>
 

@@ -15,12 +15,12 @@ import { mapGetters } from "vuex";
 export default {
   name: "Confirmation",
   components: {
-    Project,
+    Project
   },
   computed: mapGetters(["getProject"]),
   created() {
     console.log(this.getProject);
-  },
+  }
 };
 </script>
 
@@ -41,7 +41,6 @@ body {
   max-height: 100%;
 
   position: absolute;
-
 }
 
 .item {

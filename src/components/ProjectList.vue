@@ -20,11 +20,11 @@ export default {
     return {
       projects: [],
       assos: [],
-      ads: [],
+      ads: []
     };
   },
   components: {
-    Project,
+    Project
   },
   computed: mapGetters(["isConfirmed"]),
 
@@ -85,15 +85,15 @@ export default {
       "tgIsPlaying",
       "tgSelected",
       "tgIsDonating",
-      "tgModal",
-    ]),
+      "tgModal"
+    ])
   },
 
   created() {
     this.getData();
     this.getAdCamps();
     this.getAsso();
-  },
+  }
 };
 </script>
 

@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  props: ["myVid"],
+  props: ["myVid"]
 };
 </script>
 

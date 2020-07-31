@@ -3,7 +3,7 @@ export const timerMixin = {
     return {
       progress: 0,
       show: true,
-      binder: null,
+      binder: null
     };
   },
   //Timer controls
@@ -24,7 +24,7 @@ export const timerMixin = {
     },
     tgShow() {
       this.show = !this.show;
-    },
+    }
   },
 
   //Stopping timer after 20 secs
@@ -33,7 +33,7 @@ export const timerMixin = {
       if (this.progress === 20) {
         this.stop();
       }
-    },
+    }
   },
   created() {
     this.start();
@@ -41,5 +41,5 @@ export const timerMixin = {
   //Making sure that setInterval does not over load
   beforeDestroy() {
     clearInterval(this.binder);
-  },
+  }
 };

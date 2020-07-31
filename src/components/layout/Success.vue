@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       bind: null,
-      hide: true,
+      hide: true
     };
   },
 
@@ -17,7 +17,7 @@ export default {
     this.bind = setTimeout(() => {
       this.hide = false;
     }, 1000);
-  },
+  }
 };
 </script>
 

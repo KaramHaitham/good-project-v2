@@ -44,21 +44,21 @@ export default {
 
   components: {
     ProgressBar,
-    Success,
+    Success
   },
   data() {
     return {
-      show: false,
+      show: false
     };
   },
 
   watch: {
     donCounter: function() {
       this.show = true;
-    },
+    }
   },
 
-  computed: mapGetters(["isPlaying", "donCounter", "isConfirmed"]),
+  computed: mapGetters(["isPlaying", "donCounter", "isConfirmed"])
 };
 </script>
 

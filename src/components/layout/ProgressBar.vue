@@ -38,8 +38,8 @@ export default {
       this.tgIsDonating(false);
       this.progress = 0;
     },
-    ...mapActions(["tgModal", "tgIsDonating", "tgIsPlaying"]),
-  },
+    ...mapActions(["tgModal", "tgIsDonating", "tgIsPlaying"])
+  }
 };
 </script>
 

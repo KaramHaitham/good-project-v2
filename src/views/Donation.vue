@@ -13,7 +13,7 @@
 import Video from "../components/Video.vue";
 import Modal from "../components/layout/Modal.vue";
 import { mapGetters } from "vuex";
-import { timerMixin } from "../Mixins/TimerMixin"
+import { timerMixin } from "../Mixins/TimerMixin";
 
 export default {
   name: "Donation",
@@ -24,14 +24,14 @@ export default {
       uri: "",
       title: "",
       redirect: "",
-      binder:null,
-      timer:0,
+      binder: null,
+      timer: 0
     };
   },
 
   components: {
     Video,
-    Modal,
+    Modal
   },
   computed: mapGetters(["isPlaying", "getCampaigns"]),
   //fetch ads from store and chose a random campaign to play
@@ -45,21 +45,21 @@ export default {
     this.uri = this.campaigns[rand].video_uri;
     this.title = this.campaigns[rand].title;
     this.redirect = this.campaigns[rand].redirect_uri;
-  },
+  }
 
-// Assuring that the user stays 20secs , Not completeted,
-//Started Implimenting the Mix'ins to share same code as progress bar ...
-// // Warning before leaving
-//   beforeRouteLeave(to, from, next) {
-//     const answer = window.confirm(
-//       "Do you really want to leave?  Must stay 20 secs to save Lives!!!     Click cancel to stay"
-//     );
-//     if (answer) {
-//       next();
-//     } else {
-//       next(false);
-//     }
-//   },
+  // Assuring that the user stays 20secs , Not completeted,
+  //Started Implimenting the Mix'ins to share same code as progress bar ...
+  // // Warning before leaving
+  //   beforeRouteLeave(to, from, next) {
+  //     const answer = window.confirm(
+  //       "Do you really want to leave?  Must stay 20 secs to save Lives!!!     Click cancel to stay"
+  //     );
+  //     if (answer) {
+  //       next();
+  //     } else {
+  //       next(false);
+  //     }
+  //   },
 };
 </script>
 

@@ -8,18 +8,18 @@ const state = {
   donCounter: 0,
   project: {},
   Adcampaigns: [],
-  Assos: [],
+  Assos: []
 };
 
 const getters = {
-  isModal: (state) => state.isModal,
-  isPlaying: (state) => state.isPlaying,
-  isDonating: (state) => state.isDonating,
-  donCounter: (state) => state.donCounter,
-  getProject: (state) => state.project,
-  getCampaigns: (state) => state.Adcampaigns,
-  isSelected: (state) => state.isSelected,
-  isConfirmed: (state) => state.isConfirmed,
+  isModal: state => state.isModal,
+  isPlaying: state => state.isPlaying,
+  isDonating: state => state.isDonating,
+  donCounter: state => state.donCounter,
+  getProject: state => state.project,
+  getCampaigns: state => state.Adcampaigns,
+  isSelected: state => state.isSelected,
+  isConfirmed: state => state.isConfirmed
 };
 
 const actions = {
@@ -50,7 +50,7 @@ const actions = {
   },
   setIsConfirmed({ commit }, payload) {
     commit("confirm", payload);
-  },
+  }
 };
 
 const mutations = {
@@ -63,7 +63,7 @@ const mutations = {
   toggleIsDonating: (state, payload) => {
     state.isDonating = payload;
   },
-  increment: (state) => {
+  increment: state => {
     state.donCounter++;
   },
   projectSetter: (state, payload) => {
@@ -80,12 +80,12 @@ const mutations = {
   },
   confirm: (state, payload) => {
     state.isConfirmed = payload;
-  },
+  }
 };
 
 export default {
   state,
   getters,
   actions,
-  mutations,
+  mutations
 };

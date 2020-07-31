@@ -9,7 +9,7 @@
 </template>
 
 <script>
-export default {name:'socialMedia'};
+export default { name: "socialMedia" };
 </script>
 
 <style lang="scss" scoped>
@@ -19,7 +19,7 @@ export default {name:'socialMedia'};
   width: 30px;
   text-align: center;
   text-decoration: none;
-  margin: 10px 13px 10px ; 
+  margin: 10px 13px 10px;
   border-radius: 50%;
   flex-wrap: wrap;
   justify-content: space-between;

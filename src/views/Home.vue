@@ -13,8 +13,8 @@ import ProjectList from "../components/ProjectList.vue";
 export default {
   name: "Home",
   components: {
-    ProjectList,
-  },
+    ProjectList
+  }
 };
 </script>
 <style lang="scss" scoped>

@@ -30,21 +30,21 @@ export default {
     VueFlux,
     FluxIndex,
     FluxPagination,
-    FluxPreloader,
+    FluxPreloader
   },
 
   data: () => ({
     vfOptions: {
-      autoplay: true,
+      autoplay: true
     },
     vfImages: [],
     vfTransitions: ["fade"],
-    vfCaptions: [],
+    vfCaptions: []
   }),
   props: ["photos"],
   created() {
-    this.photos.map((p) => this.vfImages.push(p));
-  },
+    this.photos.map(p => this.vfImages.push(p));
+  }
 };
 </script>
 <style lang="scss" scoped>

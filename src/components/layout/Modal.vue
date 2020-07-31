@@ -39,11 +39,11 @@ export default {
   components: {
     Button,
     Arrows,
-    Project,
+    Project
   },
   data() {
     return {
-      selectedPr: {},
+      selectedPr: {}
     };
   },
   methods: {
@@ -51,20 +51,20 @@ export default {
     startExp() {
       this.tgModal(true);
       this.tgIsPlaying(true);
-    },
+    }
   },
   computed: mapGetters([
     "isPlaying",
     "getProject",
     "isDonating",
     "isSelected",
-    "donCounter",
+    "donCounter"
   ]),
   created() {
     if (this.getProject) {
       this.selectedPr = this.$store.state.projects.isProject;
     }
-  },
+  }
 };
 </script>
 

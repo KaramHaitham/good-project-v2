@@ -40,7 +40,7 @@ export default {
   name: "Project",
   data() {
     return {
-      confirmationText: " Hurray ! what a social champion!",
+      confirmationText: " Hurray ! what a social champion!"
     };
   },
   props: ["project", "order"],
@@ -80,7 +80,7 @@ export default {
       "setProject",
       "tgSelected",
       "tgModal",
-      "setIsConfirmed",
+      "setIsConfirmed"
     ]),
     setConfirmation() {
       if (this.order === "confirmed") {
@@ -91,13 +91,13 @@ export default {
     },
     beforDestroy() {
       this.endExp();
-    },
+    }
   },
 
   components: {
     Button,
     socialMedia,
-    Slider,
+    Slider
   },
   //watching for confirmation order from parent
   watch: {
@@ -107,14 +107,14 @@ export default {
       } else {
         this.setIsConfirmed(false);
       }
-    },
+    }
   },
   created() {
     if (!this.isDonating) {
       this.btnName = "Confirmation";
     }
     this.setConfirmation();
-  },
+  }
 };
 </script>
 
