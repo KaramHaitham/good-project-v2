@@ -1,6 +1,6 @@
 # good-project
 
-# Clonning the good-project
+## Clonning the good-project
 ```
 cd good-project
 Then follow the project setup comand below
