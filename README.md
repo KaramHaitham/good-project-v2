@@ -2,10 +2,11 @@
  
 ```
 ## Clonning the good-project to your local machin
-
+```
 git clone git@github.com:KaramHaitham/good-project.git
 
 cd good-project
+```
 
 ### Project setup (getting node_modules)
 ```
