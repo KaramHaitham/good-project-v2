@@ -1,8 +1,12 @@
 # good-project
 
-## Clonning the good-project
+## Clonning the good-project to your local machin
+
 ```
+git clone git@github.com:KaramHaitham/good-project.git
+
 cd good-project
+
 Then follow the project setup comand below
 
 ## Project setup
