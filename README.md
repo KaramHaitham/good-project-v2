@@ -1,5 +1,5 @@
 # good-project
-
+```
 This is a Vue 2 project built with vuex for state managment and vue-router for routing.
 Bundeled with webpack
 Transpiled with babel for backwards compatibility and browser support for all javascript versions es5 and es6 and esNext
@@ -13,6 +13,7 @@ All functional components are found in src/components
 All interface components are found in src/layout
 All router related components are founf in src/views
 All global state managment files are foun is src/store
+ 
  
 ```
 ## Clonning the good-project to your local machin
