@@ -47,11 +47,6 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-.slider {
-  height: 100%;
-  max-height: 400px;
-  width: 100%;
-  max-width: 600px;
-}
-</style>
+
+<style scoped lang="scss" src="../../assets/css/layout/_slider.scss"></style>
+

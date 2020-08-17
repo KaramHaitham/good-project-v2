@@ -1,12 +1,7 @@
 <template>
   <div class="container">
     <div class="item">
-      <Project
-        v-for="pr in projects"
-        :key="pr.id"
-        :project="pr"
-        :order="'not_confirmed'"
-      />
+      <Project v-for="pr in projects" :key="pr.id" :project="pr" :order="'not_confirmed'" />
     </div>
   </div>
 </template>
@@ -97,40 +92,5 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+<style scoped lang="scss" src="../assets/css/_projectList.scss"></style>
 
-.container {
-  width: 960px;
-  max-width: 100%;
-  padding: 20px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  border-left: 1px solid #dfe6eb;
-  border-right: 1px solid #dfe6eb;
-}
-
-@media screen and (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    width: 970px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .container {
-    width: 970px;
-  }
-}
-</style>
