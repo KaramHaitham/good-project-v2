@@ -1,7 +1,7 @@
 <template>
   <!-- show progress bar only-->
   <div>
-    <div class="basbar" v-if="show">
+    <div class="basbar" v-if="show && this.$route.path === '/donation'">
       <div class="progressbar">
         <div
           class="progressbar text-center"
@@ -12,7 +12,7 @@
       </div>
     </div>
     <!-- Show button only -->
-    <div v-else>
+    <div v-if="!show && this.$route.path === '/donation'">
       <Button
         :onClick="endExp"
         :class="btnTheme"
