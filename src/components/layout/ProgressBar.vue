@@ -12,7 +12,7 @@
       </div>
     </div>
     <!-- Show button only -->
-    <div v-else class="confirmationButton">
+    <div v-else>
       <Button
         :onClick="endExp"
         :class="btnTheme"
