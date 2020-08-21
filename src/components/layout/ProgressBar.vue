@@ -1,29 +1,47 @@
 <template>
-  <div class="basbar">
-    <div class="progressbar">
-      <div class="progressbar text-center" :style="{ width: progress * 10 + 'px' }">
-        <!-- Display progress bar or confirmation button in header -->
-        <span v-if="show">{{ this.progress }}</span>
-        <template v-else>
-          <span @click="endExp" :style="this.show ? '' : 'cursor: pointer;'">confirm donation</span>
-          <div class="arr">
-            <Arrow />
-          </div>
-        </template>
+  <!-- show progress bar only-->
+  <div>
+    <div class="basbar" v-if="show">
+      <div class="progressbar">
+        <div
+          class="progressbar text-center"
+          :style="{ width: progress * 10 + 'px' }"
+        >
+          <div>{{ this.progress }}</div>
+        </div>
       </div>
+    </div>
+    <!-- Show button only -->
+    <div v-else class="confirmationButton">
+      <Button
+        :onClick="endExp"
+        :class="btnTheme"
+        :style="this.show ? '' : 'cursor: pointer;'"
+      >
+        confirm donation
+        <div class="arr">
+          <Arrow />
+        </div>
+      </Button>
     </div>
   </div>
 </template>
 
 <script>
 import Arrow from "./Arrows";
+import Button from "./Button";
 import { mapActions } from "vuex";
 import { timerMixin } from "../../Mixins/TimerMixin";
 
 export default {
   name: "ProgressBar",
   mixins: [timerMixin],
-  components: { Arrow },
+  components: { Arrow, Button },
+  data() {
+    return {
+      btnTheme: "confirm",
+    };
+  },
   //Timer controls
   methods: {
     endExp() {
@@ -35,9 +53,13 @@ export default {
       this.tgIsDonating(false);
       this.progress = 0;
     },
-    ...mapActions(["tgModal", "tgIsDonating", "tgIsPlaying"])
-  }
+    ...mapActions(["tgModal", "tgIsDonating", "tgIsPlaying"]),
+  },
 };
 </script>
 
-<style scoped lang="scss" src="../../assets/css/layout/progressBar.scss"></style>
+<style
+  scoped
+  lang="scss"
+  src="../../assets/css/layout/progressBar.scss"
+></style>

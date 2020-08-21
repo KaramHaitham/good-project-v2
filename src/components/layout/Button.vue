@@ -1,5 +1,5 @@
 <template>
-  <button @click="onClick" class="button">
+  <button @click="onClick" class="button" :class="theme">
     <slot>Button</slot>
   </button>
 </template>
@@ -11,6 +11,10 @@ export default {
     onClick: {
       type: Function,
       required: true
+    },
+    theme: {
+      type: String,
+      default: "default"
     }
   }
 };

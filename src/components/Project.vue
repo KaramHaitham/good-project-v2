@@ -34,7 +34,7 @@ export default {
   name: "Project",
   data() {
     return {
-      confirmationText: " Hurray ! what a social champion!"
+      confirmationText: " Hurray ! what a social champion!",
     };
   },
   props: ["project", "order"],
