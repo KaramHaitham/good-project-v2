@@ -19,6 +19,9 @@
         <flux-index />
       </template>
     </vue-flux>
+    <div class="project-logo">
+      <img :src="prLogo" class="logo" alt="the logo" />
+    </div>
   </div>
 </template>
 
@@ -41,7 +44,7 @@ export default {
     vfTransitions: ["fade"],
     vfCaptions: []
   }),
-  props: ["photos"],
+  props: ["photos", "prLogo"],
   created() {
     this.photos.map(p => this.vfImages.push(p));
   }
@@ -49,4 +52,3 @@ export default {
 </script>
 
 <style scoped lang="scss" src="../../assets/css/layout/_slider.scss"></style>
-

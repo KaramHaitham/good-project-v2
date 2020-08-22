@@ -1,7 +1,12 @@
 <template>
   <div class="container">
     <div class="item">
-      <Project v-for="pr in projects" :key="pr.id" :project="pr" :order="'not_confirmed'" />
+      <Project
+        v-for="pr in projects"
+        :key="pr.id"
+        :project="pr"
+        :order="'not_confirmed'"
+      />
     </div>
   </div>
 </template>
@@ -13,16 +18,15 @@ export default {
   name: "ProjectList",
   data() {
     return {
-      projects: [],
-      assos: [],
-      ads: []
+      projects: []
     };
   },
   components: {
     Project
   },
-  computed: mapGetters(["isConfirmed"]),
-
+  computed: {
+    ...mapGetters(["isConfirmed"])
+  },
   // Async js, Fetching data frim mock server, firebase.
   methods: {
     async getData() {
@@ -58,22 +62,25 @@ export default {
           "https://goodproject-7340a.firebaseio.com/asData.json"
         );
         let data = await response.json();
+
+        let innerList = [];
         for (let key in data) {
-          this.assos = [...data[key]];
+          innerList.push(data[key]);
         }
-        this.dispatchAsso(this.assos);
+        this.dispatchAsso(innerList[0]);
       } catch (error) {
         alert(error + " Server problem /:");
       }
+      //dirty workaround the firebase dummy server delay
+      this.$forceUpdate();
     },
     // Initializing the env
     init() {
-      this.tgSelected();
-      this.tgIsPlaying();
-      this.tgIsDonating();
-      this.tgModal();
+      this.tgSelected(false);
+      this.tgIsPlaying(false);
+      this.tgIsDonating(false);
+      this.tgModal(false);
     },
-
     ...mapActions([
       "dispatchAdcamp",
       "dispatchAsso",
@@ -83,8 +90,8 @@ export default {
       "tgModal"
     ])
   },
-
   created() {
+    this.init();
     this.getData();
     this.getAdCamps();
     this.getAsso();
@@ -93,4 +100,3 @@ export default {
 </script>
 
 <style scoped lang="scss" src="../assets/css/_projectList.scss"></style>
-
