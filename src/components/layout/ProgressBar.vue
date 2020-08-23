@@ -32,7 +32,6 @@ import Arrow from "./Arrows";
 import Button from "./Button";
 import { mapActions } from "vuex";
 import { timerMixin } from "../../Mixins/TimerMixin";
-
 export default {
   name: "ProgressBar",
   mixins: [timerMixin],
@@ -45,8 +44,7 @@ export default {
   //Timer controls
   methods: {
     endExp() {
-      this.tgShow(false);
-
+      this.tgShow();
       //display confirmation modal
       this.tgModal(false);
       this.tgIsPlaying(false);
