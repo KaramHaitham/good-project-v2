@@ -1,0 +1,18 @@
+.donCounterbar {
+  height: 5px;
+  margin: auto;
+  transition: width 2s;
+  background-color: rgb(22, 145, 22);
+  margin: 0;
+  //width: is defined inside the component;
+  border-radius: 5px;
+  background: rgb(22, 145, 22);
+  margin-bottom: 5%;
+}
+.donCounterBasbar {
+  border-radius: 10px;
+  border: 2px solid green;
+  width: 230px;
+  height: 5px;
+  margin-bottom: 5%;
+}

@@ -71,9 +71,9 @@ export default {
     ...mapActions(["tgSelected"])
   },
 
-  computed: mapGetters(["isSelected"]),
+  computed: mapGetters(["getProject"]),
   created() {
-    this.selectedPr = this.$store.state.projects.isProject;
+    this.selectedPr = this.getProject;
   }
 };
 </script>

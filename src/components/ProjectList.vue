@@ -1,7 +1,12 @@
 <template>
   <div class="container">
     <div class="item">
-      <Project v-for="pr in projects" :key="pr.id" :project="pr" :order="'not_confirmed'" />
+      <Project
+        v-for="pr in getProjects"
+        :key="pr.id"
+        :project="pr"
+        :order="'not_confirmed'"
+      />
     </div>
   </div>
 </template>
@@ -15,13 +20,18 @@ export default {
     return {
       projects: [],
       assos: [],
-      ads: []
+      ads: [],
     };
   },
   components: {
-    Project
+    Project,
   },
-  computed: mapGetters(["isConfirmed"]),
+  computed: mapGetters([
+    "isConfirmed",
+    "getProjects",
+    "getProject",
+    "donCounter"
+  ]),
 
   // Async js, Fetching data frim mock server, firebase.
   methods: {
@@ -34,6 +44,7 @@ export default {
         for (let key in data) {
           this.projects = [...data[key]];
         }
+        this.dispatchProjects(this.projects);
       } catch (error) {
         alert(error + " Server problem /:");
       }
@@ -80,17 +91,20 @@ export default {
       "tgIsPlaying",
       "tgSelected",
       "tgIsDonating",
-      "tgModal"
-    ])
+      "tgModal",
+      "dispatchProjects",
+    ]),
   },
 
   created() {
-    this.getData();
-    this.getAdCamps();
-    this.getAsso();
-  }
+    //condition to avoid repetetive http requests
+    if (this.donCounter === 0) {
+      this.getData();
+      this.getAdCamps();
+      this.getAsso();
+    }
+  },
 };
 </script>
 
 <style scoped lang="scss" src="../assets/css/_projectList.scss"></style>
-

@@ -57,11 +57,21 @@
 }
 .card-statistics {
   display: flex;
-
   justify-content: space-between;
-  padding: 10px 20px 15px;
+  margin: 0 auto;
   background: linear-gradient(to bottom left, #e9f6fa 40%, #d2f0fa 100%);
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
   zoom: 1;
+  div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 17px;
+    color: #353e44;
+    zoom: 1;
+  }
+  span {
+    padding: 0 3px;
+  }
 }
