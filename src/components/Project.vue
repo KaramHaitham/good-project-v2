@@ -3,6 +3,7 @@
     <div class="card">
       <div class="card_image" @click="displayPage">
         <Slider :photos="project.photos" />
+        <Slider :photos="project.photos" :prLogo="logo" />
       </div>
       <!-- Card for project Display -->
       <div class="card_content" v-if="this.isConfirmed === false">
@@ -51,6 +52,7 @@ export default {
     return {
       confirmationText: " Hurray ! what a social champion!",
       donPercentage: 0,
+      logo: ""
     };
   },
   props: {
@@ -99,6 +101,15 @@ export default {
       };
       this.dispUpdatedProject(newProject);
     },
+    //matching the project asso_id to the real asso then attributing its logo to the project listed
+    mapAssoLogoToProject() {
+      const allAssos = this.$store.state.projects.Assos;
+
+      const foundAsso = allAssos.find(el => el._id === this.project.asso_id);
+      if (foundAsso) {
+        this.logo = foundAsso.logo;
+      }
+    },
     ...mapActions([
       "tgIsDonating",
       "incrementDon",
@@ -142,7 +153,11 @@ export default {
       }
     },
   },
+
   created() {
+    // first
+    this.mapAssoLogoToProject();
+    //then
     if (!this.isDonating) {
       this.btnName = "Confirmation";
     }
