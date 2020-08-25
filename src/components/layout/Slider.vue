@@ -20,7 +20,7 @@
       </template>
     </vue-flux>
     <div class="project-logo">
-      <img :src="prLogo" class="logo" alt="the logo" />
+      <img :src="prLogo" alt="logo" />
     </div>
   </div>
 </template>
