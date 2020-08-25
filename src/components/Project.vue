@@ -2,7 +2,6 @@
   <div class="wrapper">
     <div class="card">
       <div class="card_image" @click="displayPage">
-        <Slider :photos="project.photos" />
         <Slider :photos="project.photos" :prLogo="logo" />
       </div>
       <!-- Card for project Display -->
