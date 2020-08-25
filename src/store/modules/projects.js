@@ -8,7 +8,8 @@ const state = {
   donCounter: 0,
   project: {},
   Adcampaigns: [],
-  Assos: []
+  Assos: [],
+  allProjects: [],
 };
 
 const getters = {
@@ -18,8 +19,9 @@ const getters = {
   donCounter: state => state.donCounter,
   getProject: state => state.project,
   getCampaigns: state => state.Adcampaigns,
+  getProjects: state => state.allProjects,
   isSelected: state => state.isSelected,
-  isConfirmed: state => state.isConfirmed
+  isConfirmed: state => state.isConfirmed,
 };
 
 const actions = {
@@ -42,6 +44,9 @@ const actions = {
   dispatchAsso({ commit }, assos) {
     commit("assoSetter", assos);
   },
+  dispatchProjects({ commit }, projects) {
+    commit("projectsSetter", projects);
+  },
   tgSelected({ commit }, payload) {
     commit("selected", payload);
   },
@@ -50,7 +55,10 @@ const actions = {
   },
   setIsConfirmed({ commit }, payload) {
     commit("confirm", payload);
-  }
+  },
+  dispUpdatedProject({ commit }, payload) {
+    commit("updateProject", payload);
+  },
 };
 
 const mutations = {
@@ -67,7 +75,7 @@ const mutations = {
     state.donCounter++;
   },
   projectSetter: (state, payload) => {
-    state.isProject = payload;
+    state.project = payload;
   },
   adsSetter: (state, payload) => {
     state.Adcampaigns = payload;
@@ -75,11 +83,22 @@ const mutations = {
   assoSetter: (state, payload) => {
     state.Assos = payload;
   },
+  projectsSetter: (state, payload) => {
+    state.allProjects = payload;
+  },
   selected: (state, payload) => {
     state.isSelected = payload;
   },
   confirm: (state, payload) => {
     state.isConfirmed = payload;
+  },
+  updateProject: (state, payload) => {
+    //finding the project
+    const index = state.allProjects.findIndex((pr) => pr._id === payload._id);
+    //replacing old project with new project
+    if (index !== -1) {
+      state.allProjects.splice(index, 1, payload);
+    }
   }
 };
 
@@ -87,5 +106,5 @@ export default {
   state,
   getters,
   actions,
-  mutations
+  mutations,
 };

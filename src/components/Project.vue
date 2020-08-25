@@ -53,7 +53,13 @@ export default {
       donPercentage: 0,
     };
   },
-  props: ["project", "order"],
+  props: {
+    project: {
+      type: Object,
+      required: true
+    },
+    order: String
+  },
   computed: mapGetters(["isDonating", "isConfirmed"]),
 
   methods: {
@@ -76,6 +82,7 @@ export default {
       this.tgIsDonating(false);
       this.tgSelected(false);
       this.incrementDon();
+      this.updateProject();
       this.tgModal(false);
       this.$router.push("/");
     },
@@ -84,6 +91,14 @@ export default {
       this.setProject(this.project);
       this.tgSelected(true);
     },
+    updateProject() {
+      // preparing new project object
+      const newProject = {
+        ...this.project,
+        donation_current: this.project.donation_current + 1,
+      };
+      this.dispUpdatedProject(newProject);
+    },
     ...mapActions([
       "tgIsDonating",
       "incrementDon",
@@ -91,6 +106,7 @@ export default {
       "tgSelected",
       "tgModal",
       "setIsConfirmed",
+      "dispUpdatedProject",
     ]),
     setConfirmation() {
       if (this.order === "confirmed") {
@@ -104,6 +120,9 @@ export default {
     },
     getPercentage(perc) {
       this.donPercentage = perc;
+      if (this.donPercentage > 100) {
+        this.donPercentage = 100;
+      }
     },
   },
 

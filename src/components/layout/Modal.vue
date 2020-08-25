@@ -59,8 +59,8 @@ export default {
     "donCounter"
   ]),
   created() {
-    if (this.getProject) {
-      this.selectedPr = this.$store.state.projects.isProject;
+    if (this.getProject.length !== 0) {
+      this.selectedPr = this.getProject;
     }
   }
 };
