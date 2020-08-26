@@ -4,7 +4,7 @@
     <Modal />
     <div class="content" v-if="isPlaying === true">
       <div class="logo">{{ title }}</div>
-      <Video :myVid="uri" @click="redirect" />
+      <Video :myVid="uri" :redirect_uri="redirect" />
     </div>
   </div>
 </template>
@@ -28,7 +28,6 @@ export default {
       timer: 0
     };
   },
-
   components: {
     Video,
     Modal
