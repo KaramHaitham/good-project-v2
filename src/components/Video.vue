@@ -10,6 +10,7 @@
     autoplay
     style="'{cursor: pointer}'"
     @click="redirectHandler(redirect_uri)"
+    :style="'cursor: pointer'"
   >
     <source :src="myVid" type="video/mp4" />
     <source :src="myVid" type="video/webm" />
